@@ -1,0 +1,39 @@
+Panduan untuk menjalankan CRUD Mahasiswa..
+
+1.  Buat project laravel baru, buka cmd ketik cd C:\xampp\htdocs dan isi dengan
+    
+    composer create-project --prefer-dist laravel/laravel crudmhs
+2.  Salin file Students.php kedalam folder app
+3.  Salin file StudentsController.php kedalam folder app/Http/Controllers
+4.  Salin folder css dan js beserta isinya ke folder public
+5.  Salin folder layout, create.blade.php, edit.blade.php, index.blade.php, read.blade.php kedalam folder resources/views
+6.  Buka file web.php yang ada didalam folder routes, salin kodingan dibawah ini, kemudian save.
+    
+    Route::get('/','StudentsController@index');
+
+    Route::get('back','StudentsController@back');
+
+    Route::get('create','StudentsController@create');
+
+    Route::post('insert', 'StudentsController@insert');
+
+    Route::get('delete/{id}','StudentsController@delete');
+
+    Route::get('edit/{id}','StudentsController@edit');
+
+    Route::post('update/{id}', 'StudentsController@update');
+
+    Route::get('read/{id}','StudentsController@read');
+
+7.  Import file Students.sql 
+8.  Saya menggunakan auto login scaffolding dengan mengintall
+	
+	composer require laravel/ui
+	
+	php artisan ui vue --auth
+	
+	kemudian tinggal di compile
+	
+	npm install && npm run dev
+	
+Terima kasih atas perhatiannya
